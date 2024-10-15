@@ -22,14 +22,3 @@ Route::middleware(['auth:sanctum','is_admin'])->group( function (){
     Route::put('admin/appointments/{id}',[AdminController::class, 'update']);
     Route::get('admin/appointments/{id}',[AdminController::class, 'destroy']);
 });
-//endpoint routes
-Route::get('/api/endpoints', function () {
-    return response()->json([
-        'appointment_index' => url('/api/appointment'),
-        'appointment_store' => url('/api/appointment'),
-        'register' => url('/api/register'),
-        'login' => url('/api/login'),
-        'logout' => url('/api/logout'),
-        'admin_appointments_index' => url('/api/admin/appointments'),
-    ]);
-});
